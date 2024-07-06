@@ -43,7 +43,6 @@ header {
 }
 
 .box {
-    background-image: url('/images/1.png');
     background-size: cover;
     background-position: center;
     border-radius: 10px;
