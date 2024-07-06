@@ -1,0 +1,252 @@
+@font-face {
+    font-family: 'MetricHPE';
+    src: url('/font/MetricHPE-Desktop-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MetricHPE';
+    src: url('/font/MetricHPE-Desktop-Bold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* General styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MetricHPE', sans-serif;
+    background-color: #ffffff;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+header {
+    display: none;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    width: 500px;
+}
+
+.logo img {
+    width: 250px;
+}
+
+.box {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    
+    margin: 20px auto;
+    padding: 40px;
+    position: relative;
+    max-width: 500px;
+    max-height: 1105px;
+    background-color: #fff;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.box h2,
+.box form {
+    position: relative;
+    z-index: 2;
+}
+
+.box h2 {
+    margin: 0 0 30px 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.box .inputBox label {
+    color: #000;
+}
+
+.box .top-image {
+    display: block;
+    width: 500px;
+    margin-left: -40px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 2;
+}
+
+.box .bottom-image {
+    display: block;
+    width: 500px;
+    margin-left: -40px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.box .inputBox input {
+    
+    background: #00000075;
+    border: none;
+    /* border-bottom: 1px solid #000; */
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    outline: none;
+    padding: 10px 0;
+    width: 100%;
+    padding-left: 15px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.box input[type="submit"], .box button[type="submit"], a.button {
+    font-family: 'MetricHPE', sans-serif;
+    background: #1dae87;
+    font-size: 11px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    outline: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 2px 10px 2px 0;
+    display: inline-block;
+}
+
+.footer-footer-bottom {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.box input[type="submit"]:hover, .box button[type="submit"]:hover, a.button:hover {
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .logo {
+        width: 400px;
+    }
+
+    .logo img {
+        width: 200px;
+    }
+
+    .box {
+        padding: 30px;
+        max-width: 450px;
+    }
+
+    .box .top-image, .box .bottom-image {
+        width: 450px;
+        margin-left: -30px;
+    }
+
+    .box h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 300px;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    .box {
+        margin-top: 85px;
+        padding: 20px;
+        max-width: 400px;
+    }
+
+    .box .top-image, .box .bottom-image {
+        width: 400px;
+        margin-left: -20px;
+    }
+
+    .box h2 {
+        font-size: 20px;
+    }
+
+    .box .inputBox input {
+        font-size: 16px;
+    }
+
+    .box input[type="submit"], .box button[type="submit"], a.button {
+        font-size: 10px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 200px;
+    }
+
+    .logo img {
+        width: 140px;
+    }
+
+    .box {
+        margin-top: 85px;
+        padding: 15px;
+        max-width: 350px;
+    }
+
+    .box .top-image{
+        padding-top: 25px;
+        width: 347px;
+        margin-left: -14px;
+    }
+    
+    .box .bottom-image {
+        width: 347px;
+        margin-left: -14px;
+    }
+
+    .box h2 {
+        font-size: 18px;
+    }
+
+    .box .inputBox input {
+        font-size: 14px;
+    }
+
+    .box input[type="submit"], .box button[type="submit"], a.button {
+        font-size: 9px;
+        padding: 6px 12px;
+    }
+}
