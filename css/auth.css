@@ -47,13 +47,13 @@ header {
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+    
     margin: 20px auto;
     padding: 40px;
     position: relative;
     max-width: 500px;
     max-height: 1105px;
-    background-color: rgba(0, 0, 0, 0.5); /* Apply the background color here */
+    background-color: #fff;
 }
 
 .box::after {
@@ -81,7 +81,7 @@ header {
 }
 
 .box .inputBox label {
-    color: #fff;
+    color: #000;
 }
 
 .box .top-image {
@@ -103,9 +103,11 @@ header {
 }
 
 .box .inputBox input {
-    background: transparent;
+    
+    background: #00000075;
     border: none;
-    border-bottom: 1px solid #fff;
+    /* border-bottom: 1px solid #000; */
+    border-radius: 10px;
     color: #fff;
     font-size: 18px;
     letter-spacing: 2px;
@@ -113,6 +115,7 @@ header {
     outline: none;
     padding: 10px 0;
     width: 100%;
+    padding-left: 15px;
 }
 
 .button-container {
