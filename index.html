@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Register HPE</title>
+
+    <!-- Custom styles for this template -->
+    <link href="css/particles.css" rel="stylesheet"/>
+    <link href="css/auth.css" rel="stylesheet"/>
+</head>
+<body style="background-color: #fff;">
+
+<div id="tsparticles"></div>
+<div class="logo">
+    <img src="https://firebasestorage.googleapis.com/v0/b/tieyoung-e964a.appspot.com/o/Hpe%20form%2Flogo.png?alt=media&token=3e821fd8-3b63-413a-a2b1-f9a2ba868f66" alt="Logo">
+</div>
+<main class="box">
+    <img class="top-image" src="https://firebasestorage.googleapis.com/v0/b/tieyoung-e964a.appspot.com/o/Hpe%20form%2Fhead.png?alt=media&token=fd5faff2-d1c0-45e0-b06c-e62d09a2d2e4" alt="Top Image">
+    <h2 style="padding-top: 20px; color: black;">REGISTER</h2>
+    <form id="registrationForm">
+        
+        <div class="inputBox">
+            <label for="userName">NAME</label>
+            <input type="text" name="userName" id="userName" placeholder="Username" required autocomplete="name"/>
+        </div>
+        <div class="inputBox">
+            <label for="userCompany">COMPANY</label>
+            <input type="text" name="userCompany" id="userCompany" placeholder="Company" required autocomplete="organization"/>
+        </div>
+        <div class="inputBox">
+            <label for="userAddress">ADDRESS</label>
+            <input type="text" name="userAddress" id="userAddress" placeholder="Address" required autocomplete="street-address"/>
+        </div>
+        <div class="inputBox">
+            <label for="userMobile">MOBILE NUMBER</label>
+            <input type="number" name="userMobile" id="userMobile" placeholder="Mobile Number" required autocomplete="tel"/>
+        </div>
+        <div class="inputBox">
+            <label for="userEmail">EMAIL ID</label>
+            <input type="email" name="userEmail" id="userEmail" placeholder="Email" required autocomplete="email"/>
+        </div>
+        <div class="message-container" style="display: none; color: black;">
+            <p id="registrationMessage"></p>
+        </div>
+        <div class="button-container">
+            <button type="submit" name="">Submit</button>
+        </div>
+        <div class="inputBox">
+            <img class="bottom-image" src="https://firebasestorage.googleapis.com/v0/b/tieyoung-e964a.appspot.com/o/Hpe%20form%2Fbottom.png?alt=media&token=1d356727-3e5d-444a-b115-8ed1e5534de7" alt="Bottom Image">
+        </div>
+    </form>
+</main>
+<footer style="padding-top: 20px;"></footer>
+
+<script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      var formData = new FormData(this);
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://script.google.com/macros/s/AKfycbw3oLtdvxHRNbx9zi9X1_Ckw9U5r8BAQGDM3OOoNg2mWV3AN1JDGctZDjzBHp2MhvtU/exec');
+  
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          var response = JSON.parse(xhr.responseText);
+          var messageContainer = document.querySelector('.message-container');
+          var registrationMessage = document.getElementById('registrationMessage');
+  
+          if (response.status == 'already_registered') {
+            registrationMessage.textContent = 'User is already registered';
+            messageContainer.style.display = 'block';
+          } else if (response.status == 'success') {
+            registrationMessage.textContent = 'Form submitted successfully';
+            messageContainer.style.display = 'block';
+            document.getElementById('registrationForm').reset();
+          } else {
+            alert('An error occurred');
+          }
+        }
+      };
+  
+      xhr.send(formData);
+    });
+  </script>
+  
+</body>
+
+</html>
